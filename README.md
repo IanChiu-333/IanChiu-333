@@ -96,7 +96,7 @@ Machine Learning · Computer Vision (SAM, YOLO, U-Net) · Cloud Architecture · 
 
 <div align="center">
 
-![github contribution grid snake animation](https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg)
+![github contribution grid snake animation](https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/output/github-contribution-grid-snake-dark.svg)
 
 *Last updated: January 2026*
 
