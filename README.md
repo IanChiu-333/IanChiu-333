@@ -10,10 +10,6 @@
 
 Data Science student at the University of Washington specializing in scalable systems and machine learning applications. Experience spans cloud infrastructure design, computer vision research, and full-stack development. Recent work includes designing systems projected to save $2M annually, developing open-source tools for environmental monitoring, and building applications for social impact.
 
-**Current Focus:** Seeking full-time Software Engineering and Data Science opportunities for 2026
-
-**Recent Achievement:** Award-winning disaster relief application at DubHacks 2024, selected from over 170 projects
-
 ---
 
 ## Professional Experience
@@ -91,9 +87,6 @@ Machine Learning · Computer Vision (SAM, YOLO, U-Net) · Cloud Architecture · 
 ---
 
 ## Contact
-
-
-Currently seeking full-time Software Engineering and Data Science opportunities for 2026.
 
 **Email:** ianchiujobs@gmail.com  
 **LinkedIn:** [linkedin.com/in/ian-chiu-494058215](https://www.linkedin.com/in/ian-chiu-494058215)  
