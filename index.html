@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ian Chiu | Portfolio</title>
+  <meta name="description" content="Ian Chiu — Data Science, Software Engineering, Machine Learning">
+  <style>
+    :root {
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #21262d;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #8b949e;
+      --accent:   #f97316;
+      --accent-h: #ea6d0a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-h); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(13, 17, 23, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-weight: 700; font-size: 1rem; color: var(--text); letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: 0.875rem; transition: color 0.2s; }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── Layout ── */
+    .section-wrap { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+
+    h2.section-title { font-size: 1.6rem; font-weight: 700; }
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 36px; height: 3px;
+      background: var(--accent);
+      margin-top: 0.4rem;
+      border-radius: 2px;
+    }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 6rem 2rem 4rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .hero-content { display: flex; align-items: center; gap: 4rem; width: 100%; }
+    .hero-text { flex: 1; }
+
+    .hero-greeting {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .hero-name {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(130deg, var(--text) 55%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero-tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.18s;
+      border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-h); border-color: var(--accent-h); color: #fff; }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Photo */
+    .hero-photo {
+      width: 210px; height: 210px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      background: var(--surface2);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-placeholder {
+      color: var(--muted); font-size: 0.7rem;
+      text-align: center; padding: 1rem; line-height: 1.5;
+    }
+    .photo-placeholder code {
+      display: block; margin-top: 0.35rem;
+      font-size: 0.7rem; color: var(--accent);
+      background: rgba(249,115,22,.1); padding: 0.2rem 0.5rem; border-radius: 4px;
+    }
+
+    /* ── About ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .about-body { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
+    .about-body p + p { margin-top: 1rem; }
+
+    .about-facts { display: flex; flex-direction: column; gap: 1rem; }
+    .fact {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+    }
+    .fact-label {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--accent); font-weight: 700;
+    }
+    .fact-value { font-size: 0.875rem; color: var(--text); margin-top: 0.25rem; }
+
+    /* ── Experience ── */
+    .timeline { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .exp-card:hover { border-color: var(--accent); transform: translateX(5px); }
+
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+    .exp-company { font-size: 1rem; font-weight: 700; color: var(--accent); }
+    .exp-role { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-top: 0.15rem; }
+    .exp-meta { font-size: 0.78rem; color: var(--muted); text-align: right; white-space: nowrap; line-height: 1.5; }
+
+    .exp-bullets { padding-left: 1.2rem; color: var(--muted); font-size: 0.875rem; }
+    .exp-bullets li + li { margin-top: 0.45rem; }
+    .exp-bullets strong { color: var(--text); font-weight: 600; }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+    .project-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+
+    .project-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.7rem 0; }
+    .chip {
+      font-size: 0.68rem; padding: 0.18rem 0.55rem;
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      border-radius: 20px; font-weight: 500;
+    }
+
+    .project-desc { font-size: 0.855rem; color: var(--muted); line-height: 1.75; flex: 1; }
+
+    .project-links { margin-top: 1.2rem; display: flex; gap: 1rem; }
+    .project-link { font-size: 0.82rem; font-weight: 600; }
+    .project-link-muted { font-size: 0.78rem; color: var(--muted); align-self: flex-end; }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.35rem;
+    }
+    .skill-group-label {
+      font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--accent);
+      font-weight: 700; margin-bottom: 0.7rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      font-size: 0.775rem; padding: 0.22rem 0.6rem;
+      background: var(--surface2); color: var(--muted);
+      border: 1px solid var(--border); border-radius: 6px;
+    }
+
+    /* ── Contact ── */
+    .contact-intro {
+      color: var(--muted); margin-top: 1rem; margin-bottom: 2rem;
+      max-width: 480px; font-size: 0.95rem;
+    }
+    .contact-cards { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.75rem;
+      display: flex; align-items: center; gap: 1rem;
+      transition: border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact-icon { font-size: 1.4rem; line-height: 1; }
+    .contact-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .contact-value { font-size: 0.875rem; color: var(--text); font-weight: 600; margin-top: 0.15rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.78rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero-content { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+      .hero-btns { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .exp-header { flex-direction: column; }
+      .exp-meta { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .section-wrap { padding: 4rem 1.25rem; }
+      #hero { padding: 5rem 1.25rem 3rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Ian<span>.</span></span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div id="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-greeting">// Hello, world</p>
+      <h1 class="hero-name">Ian Chiu</h1>
+      <p class="hero-tagline">Data Science &nbsp;·&nbsp; Software Engineering &nbsp;·&nbsp; Machine Learning</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="https://github.com/IanChiu-333/IanChiu-333/raw/main/Resume_Ian_Chiu.pdf" class="btn btn-outline" target="_blank">Resume</a>
+        <a href="https://github.com/IanChiu-333" class="btn btn-outline" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-photo" id="heroPhoto">
+      <!--
+        To add your photo:
+        1. Drop a photo.jpg file in this repo's root folder
+        2. Replace the photo-placeholder div below with:
+           <img src="photo.jpg" alt="Ian Chiu">
+      -->
+      <div class="photo-placeholder">
+        Add your photo<br>to the repo root
+        <code>photo.jpg</code>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="section-wrap">
+    <h2 class="section-title">About</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>
+          I'm a Data Science student at the University of Washington specializing in scalable systems
+          and machine learning applications. I enjoy building things at the intersection of software
+          engineering and data science — whether that's a cloud infrastructure system projected to
+          save $2M annually or an open-source library that helps researchers monitor environmental
+          change from satellite imagery.
+        </p>
+        <p>
+          My experience spans cloud infrastructure design on AWS, computer vision research
+          (U-Net, SAM, YOLO), and full-stack development with React, Node.js, and Next.js.
+          I care about writing clean, maintainable code and shipping products that have
+          real-world impact.
+        </p>
+      </div>
+      <div class="about-facts">
+        <div class="fact">
+          <div class="fact-label">Education</div>
+          <div class="fact-value">B.S. Data Science<br>University of Washington</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Location</div>
+          <div class="fact-value">Seattle, WA · San Francisco, CA</div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">Status</div>
+          <div class="fact-value">Open to new opportunities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience">
+  <div class="section-wrap">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Amazon</div>
+            <div class="exp-role">Software Development Intern</div>
+          </div>
+          <div class="exp-meta">Seattle, WA<br>June 2025 – Sept 2025</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed and delivered an auto-scaling system for transportation routing workloads, projected to save <strong>$2M annually</strong> by dynamically adjusting capacity from 0 to 32 EC2 instances based on real-time demand</li>
+          <li>Built internal reservations service with tiered priority queue and API integrations, streamlining allocation of 24 transportation fleets for a team of 12 engineers</li>
+          <li>Owned full development lifecycle from design docs through CI/CD deployment with <strong>AWS CDK, Lambda, EventBridge, Step Functions, DynamoDB, and CloudWatch</strong></li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">UW eScience Institute</div>
+            <div class="exp-role">Data Science Research Assistant</div>
+          </div>
+          <div class="exp-meta">Seattle, WA<br>Jan 2024 – Present</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed <strong>PyPlanetSCA</strong>, an open-source Python library for snow coverage prediction from satellite imagery, published to PyPI</li>
+          <li>Benchmarked and fine-tuned <strong>U-Net, YOLOv8, SAM 1.0, and SAM 2.0</strong> architectures for river segmentation tasks</li>
+          <li>Authored documentation and contributed to a research paper describing library design and applications</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-company">Dignifi</div>
+            <div class="exp-role">Full Stack Software Engineering Intern</div>
+          </div>
+          <div class="exp-meta">Seattle, WA<br>Sept 2024 – Dec 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed a matching algorithm based on tag schema to connect formerly incarcerated individuals with service providers</li>
+          <li>Developed front-end features in <strong>React</strong> integrated with Node.js back-end and Firebase NoSQL database</li>
+          <li>Collaborated with product managers, designers, and engineers to deliver a scalable full-stack web application</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <div class="section-wrap">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-title">PyPlanetSCA</div>
+        <div class="project-chips">
+          <span class="chip">Python</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">PyPI</span>
+          <span class="chip">Hugging Face</span>
+        </div>
+        <p class="project-desc">
+          Open-source Python library for predicting snow coverage from satellite imagery.
+          Features pre-trained models with automated download pipelines and post-processing
+          utilities, enabling researchers to monitor snow coverage patterns for climate research.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/DSHydro/PyPlanetSCA-Python-Library" class="project-link" target="_blank">→ View Repository</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Triage: Disaster Relief App</div>
+        <div class="project-chips">
+          <span class="chip">Next.js</span>
+          <span class="chip">Python</span>
+          <span class="chip">U-Net</span>
+          <span class="chip">SAM 2.0</span>
+          <span class="chip">Computer Vision</span>
+        </div>
+        <p class="project-desc">
+          Award-winning disaster relief web application selected over 170+ projects at DubHacks 2024.
+          Features live disaster news, LLM-powered emergency chat, and CV models for rooftop
+          damage detection trained on 10,000+ building images.
+        </p>
+        <div class="project-links">
+          <a href="https://triage-relief.vercel.app/" class="project-link" target="_blank">→ Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title">Transportation Auto-Scaling System</div>
+        <div class="project-chips">
+          <span class="chip">AWS CDK</span>
+          <span class="chip">Lambda</span>
+          <span class="chip">EventBridge</span>
+          <span class="chip">Step Functions</span>
+          <span class="chip">DynamoDB</span>
+        </div>
+        <p class="project-desc">
+          Cloud infrastructure system at Amazon that optimizes routing workload capacity.
+          Dynamically scales 0–32 EC2 instances based on demand with projected annual savings
+          of $2M. Full CI/CD pipeline with monitoring and alerting.
+        </p>
+        <div class="project-links">
+          <span class="project-link-muted">Internal / Proprietary</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="section-wrap">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Frameworks</div>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Flutter</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">Cloud & Infra</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">CDK</span>
+          <span class="skill-tag">Lambda</span>
+          <span class="skill-tag">EventBridge</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-label">ML / Computer Vision</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SAM 1 / 2</span>
+          <span class="skill-tag">YOLOv8</span>
+          <span class="skill-tag">U-Net</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Data Engineering</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="section-wrap">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-intro">
+      I'm open to internships, full-time roles, and interesting projects. Feel free to reach out!
+    </p>
+    <div class="contact-cards">
+      <a href="mailto:ianchiujobs@gmail.com" class="contact-card">
+        <span class="contact-icon">✉</span>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">ianchiujobs@gmail.com</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/ian-chiu-494058215" class="contact-card" target="_blank">
+        <span class="contact-icon" style="font-weight:700;font-size:1rem;">in</span>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">ian-chiu-494058215</div>
+        </div>
+      </a>
+      <a href="https://github.com/IanChiu-333" class="contact-card" target="_blank">
+        <span class="contact-icon">⌥</span>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">IanChiu-333</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Ian Chiu &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script>
+  // Highlight active nav link based on scroll position
+  const sections = document.querySelectorAll('section[id]');
+  const heroEl   = document.getElementById('hero');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const allTargets = [heroEl, ...sections];
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-35% 0px -65% 0px' });
+
+  allTargets.forEach(el => { if (el) obs.observe(el); });
+</script>
+
+</body>
+</html>
