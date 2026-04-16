@@ -71,6 +71,7 @@ Data Science student at the University of Washington specializing in scalable sy
 *AWS · Lambda · Step Functions · DynamoDB*
 
 - Better dashboard system to manage AWS Jr Dev Program
+- Currently In Progress with Expected Completion by June 2026
 
 https://github.com/IanChiu-333/INFO_Capstone
 
