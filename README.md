@@ -67,6 +67,13 @@ Data Science student at the University of Washington specializing in scalable sy
 - Dynamically scales 0-32 EC2 instances based on demand with projected annual savings of $2M
 - Implemented full CI/CD pipeline with monitoring and alerting to eliminate over-provisioning while maintaining service reliability
 
+### INFO Capstone
+*AWS · Lambda · Step Functions · DynamoDB*
+
+- Better dashboard system to manage AWS Jr Dev Program
+
+https://github.com/IanChiu-333/INFO_Capstone
+
 ---
 
 ## Skills
