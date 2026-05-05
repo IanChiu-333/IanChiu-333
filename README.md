@@ -1,6 +1,6 @@
 # Ian Chiu
 
-<img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="240" align="right" />
+<img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="160" align="right" />
 
 **Data Science** · **Software Engineering** · **Machine Learning**
 
@@ -14,6 +14,7 @@ Data Science student at the University of Washington specializing in scalable sy
 
 ## Professional Experience
 
+---
 
 ### Amazon · Software Development Intern
 *Seattle, WA · June 2025 – September 2025*
