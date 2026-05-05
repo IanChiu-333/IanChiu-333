@@ -1,6 +1,6 @@
 # Ian Chiu
 
-<table>
+<table width="100%" border="0">
 <tr>
 <td>
 
@@ -9,7 +9,7 @@
 [LinkedIn](https://www.linkedin.com/in/ian-chiu-494058215) · [Email](mailto:ianchiujobs@gmail.com) · [Resume](https://github.com/IanChiu-333/IanChiu-333/raw/main/Resume_Ian_Chiu.pdf)
 
 </td>
-<td>
+<td align="right">
 
 <img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="200" />
 
