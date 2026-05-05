@@ -1,6 +1,6 @@
 # Ian Chiu
 
-<img src="https://github.com/IanChiu-333/IanChiu-333/raw/main/profile.jpg" width="120" align="right" />
+<img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="120" align="right" />
 
 **Data Science** · **Software Engineering** · **Machine Learning**
 
