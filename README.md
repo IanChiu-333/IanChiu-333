@@ -67,18 +67,58 @@ Data Science student at the University of Washington specializing in scalable sy
 - Dynamically scales 0-32 EC2 instances based on demand with projected annual savings of $2M
 - Implemented full CI/CD pipeline with monitoring and alerting to eliminate over-provisioning while maintaining service reliability
 
+---
+
+## In Progress Projects
+
+### Project Kiwi Salmon Identification Drone System
+*Computer Vision · Data Pipelines · Cloud Services*
+
+[View Repository](https://github.com/IanChiu-333) *(coming soon)*
+
+### DSHydro River CV Package and Website
+*Computer Vision · Satellite Imagery · *
+
+[View Repository](https://github.com/IanChiu-333) *(coming soon)*
+
 ### INFO Capstone
 *AWS · Lambda · Step Functions · DynamoDB*
 
 - Better dashboard system to manage AWS Jr Dev Program
 - Currently In Progress with Expected Completion by June 2026
 
-https://github.com/IanChiu-333/INFO_Capstone
+[View Repository](https://github.com/IanChiu-333/INFO_Capstone)
+
+### Update to PyPlanetSCA and Integration with Additional Module
+*Python · TensorFlow · PyTorch · GitHub Actions · PyPI · Hugging Face*
+
+[View Repository](https://github.com/DSHydro/PyPlanetSCA-Python-Library)
+
+### FlowState AI Calendar Organizer
+*fastapi · gemini · google calendar · google cloud · Python*
+
+[View Repository](https://github.com/IanChiu-333/flowstate-ai)
+
+---
+
+## Papers Read
+
+- **The Boundary of Neural Network Trainability is Fractal**
+- **Attention Is All You Need** — Vaswani et al. · NeurIPS 2017
+- **Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection** — Liu et al. · 2023
+
+---
+
+## Reading List
+
+- **A Mathematical Theory of Communication** — Shannon · 1948
+- **Adam: A Method for Stochastic Optimization** — Kingma & Ba · ICLR 2015
+- **Segment Anything** — Kirillov et al. · ICCV 2023
+- **Matryoshka Representation Learning** — Kusupati et al. · NeurIPS 2022
 
 ---
 
 ## Skills
-
 
 **Programming Languages**  
 Python · JavaScript · TypeScript · Java · R · SQL · HTML/CSS
