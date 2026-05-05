@@ -1,5 +1,7 @@
 # Ian Chiu
 
+<img src="https://github.com/IanChiu-333/IanChiu-333/raw/main/profile.jpg" width="120" align="right" />
+
 **Data Science** · **Software Engineering** · **Machine Learning**
 
 [LinkedIn](https://www.linkedin.com/in/ian-chiu-494058215) · [Email](mailto:ianchiujobs@gmail.com) · [Resume](https://github.com/IanChiu-333/IanChiu-333/raw/main/Resume_Ian_Chiu.pdf)
@@ -77,7 +79,7 @@ Data Science student at the University of Washington specializing in scalable sy
 [View Repository](https://github.com/IanChiu-333) *(coming soon)*
 
 ### DSHydro River CV Package and Website
-*Computer Vision · Satellite Imagery · *
+*Computer Vision · Satellite Imagery · Python*
 
 [View Repository](https://github.com/IanChiu-333) *(coming soon)*
 
@@ -117,6 +119,17 @@ Data Science student at the University of Washington specializing in scalable sy
 - **Matryoshka Representation Learning** — Kusupati et al. · NeurIPS 2022
 
 ---
+
+## LeetCode
+
+**Profile:** [leetcode.com/u/ianchiu333](https://leetcode.com/u/ianchiu333/)
+
+### To Do
+
+| # | Problem | Topic |
+|---|---------|-------|
+| 437 | Path Sum III | Tree / Prefix Sum |
+| 547 | Number of Provinces | Graph / Union Find |
 
 ## Skills
 
