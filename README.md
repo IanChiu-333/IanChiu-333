@@ -1,10 +1,21 @@
 # Ian Chiu
 
-<img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="160" align="right" />
+<table>
+<tr>
+<td>
 
 **Data Science** · **Software Engineering** · **Machine Learning**
 
 [LinkedIn](https://www.linkedin.com/in/ian-chiu-494058215) · [Email](mailto:ianchiujobs@gmail.com) · [Resume](https://github.com/IanChiu-333/IanChiu-333/raw/main/Resume_Ian_Chiu.pdf)
+
+</td>
+<td>
+
+<img src="https://raw.githubusercontent.com/IanChiu-333/IanChiu-333/main/photo.jpg" width="200" />
+
+</td>
+</tr>
+</table>
 
 ---
 
