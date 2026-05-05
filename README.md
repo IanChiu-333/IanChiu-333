@@ -12,9 +12,9 @@
 
 Data Science student at the University of Washington specializing in scalable systems and machine learning applications. Experience spans cloud infrastructure design, computer vision research, and full-stack development. Recent work includes designing systems projected to save $2M annually, developing open-source tools for environmental monitoring, and building applications for social impact.
 
-## Professional Experience
-
 ---
+
+## Professional Experience
 
 ### Amazon · Software Development Intern
 *Seattle, WA · June 2025 – September 2025*
